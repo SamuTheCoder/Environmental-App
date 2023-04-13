@@ -1,5 +1,6 @@
 package pt.ua.clima
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -29,34 +30,26 @@ class Login : AppCompatActivity() {
             }else{
                 auth.signInWithEmailAndPassword(email,senha).addOnCompleteListener{autenticacao ->
                     if (autenticacao.isSuccessfull){
-
+                        navegarToHome()
                     }
+                }.addOnFailureListener{
+                    val snackbar = Snackbar.make(view,"Erro ao fazer o login do usuário!",Snackbar.LENGTH_SHORT)
+                    snackbar.setBackgroundTint(Color.RED)
+                    snackbar.show()
                 }
             }
         }
- /*
-        var et_user_name = findViewById(R.id.et_user_name) as EditText
-        var et_password = findViewById(R.id.et_password) as EditText
-        var btn_reset = findViewById(R.id.btn_regist) as Button
-        var btn_submit = findViewById(R.id.btn_submit) as Button
 
-        btn_reset.setOnClickListener {
-            // clearing user_name and password edit text views on reset button click
-            et_user_name.setText("")
-            et_password.setText("")
+        binding.btnRegist.setOnClickListener(){
+            val intent = Intent(this,Registro::class.java)
+            startActivity(intent)
+            finish()
         }
-
-        // set on-click listener
-        btn_submit.setOnClickListener {
-            val user_name = et_user_name.text;
-            val password = et_password.text;
-            Toast.makeText(this, user_name, Toast.LENGTH_LONG).show()
-
-            // your code to validate the user_name and password combination
-            // and verify the same
-
-        }
-  */
     }
-    private  fun
+
+    private  fun navegarToHome(){
+        val intent = Intent(this,Home::class.java)
+        startActivity(intent)
+        finish()
+    }
 }
