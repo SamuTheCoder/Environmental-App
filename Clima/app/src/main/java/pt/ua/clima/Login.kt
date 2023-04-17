@@ -10,10 +10,11 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import pt.ua.clima.databinding.ActivityLogin2Binding
+import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
     private lateinit var  binding:ActivityLogin2Binding
-    private  auth = FirebaseAuth.getInstance()
+    private val auth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogin2Binding.inflate(layoutInflater)
@@ -29,7 +30,7 @@ class Login : AppCompatActivity() {
                 snackbar.show()
             }else{
                 auth.signInWithEmailAndPassword(email,senha).addOnCompleteListener{autenticacao ->
-                    if (autenticacao.isSuccessfull){
+                    if (autenticacao.isSuccessful){
                         navegarToHome()
                     }
                 }.addOnFailureListener{
