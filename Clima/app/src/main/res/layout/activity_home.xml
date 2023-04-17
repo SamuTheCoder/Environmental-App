@@ -22,7 +22,6 @@
             android:layout_height="92dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="150dp"
-            android:layout_marginBottom="0dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/clima1" />
@@ -30,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="Medições"
             android:textColor="#FFFFFF"
@@ -40,7 +39,7 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#e12340"
+            app:cardBackgroundColor="#4F4F4F"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
 
@@ -81,7 +80,7 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#e12340"
+            app:cardBackgroundColor="#4F4F4F"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
 
@@ -122,11 +121,12 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#e12340"
+            app:cardBackgroundColor="#4F4F4F"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
 
             <LinearLayout
+                android:id="@+id/home_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -163,7 +163,7 @@
             android:layout_width="300dp"
             android:layout_height="100dp"
             android:layout_marginBottom="20dp"
-            app:cardBackgroundColor="#e12340"
+            app:cardBackgroundColor="#4F4F4F"
             app:cardCornerRadius="10dp"
             app:cardElevation="2dp">
 
@@ -199,6 +199,35 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Perfil"
+                android:background="@drawable/custom_button"/>
+
+            <Button
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Pesquisar"
+                android:background="@drawable/custom_button"/>
+
+            <Button
+                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="Settings"
+                android:background="@drawable/custom_button"/>
+
+        </LinearLayout>
     </LinearLayout>
 
 
