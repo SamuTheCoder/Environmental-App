@@ -91,15 +91,46 @@
 
             <Button
                 android:id="@+id/bt_logout"
-                android:layout_width="361dp"
-                android:layout_height="71dp"
+                android:layout_width="360dp"
+                android:layout_height="69dp"
                 android:layout_margin="20dp"
-                android:backgroundTint="@color/black"
                 android:padding="0dp"
                 android:text="Logout"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <Button
+                android:id="@+id/HomeTela"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="Home" />
+            <!--
+            <Button
+                android:id="@+id/pesquisar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="Pesquisar" />
+                -->
+
+            <Button
+                android:id="@+id/definitionsButtonD"
+                android:layout_width="5dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:text="Definições" />
         </LinearLayout>
     </LinearLayout>
 

@@ -49,13 +49,18 @@ class Registro : AppCompatActivity() {
                             val  snackbar = Snackbar.make(view,"Sucesso ao cadastrar o Usuario!",Snackbar.LENGTH_SHORT)
                             snackbar.setBackgroundTint(Color.GREEN)
                             snackbar.show()
+                            /*
                             binding.PriNome.setText("")
                             binding.ultNome.setText("")
                             binding.editEmail.setText("")
                             binding.etPassword.setText("")
                             binding.ConfPassword.setText("")
+
+                             */
                             val userMap = hashMapOf("Nome" to name, "Ultimo_Nome" to lastName, "email" to email)
-                            db.collection("Users").document(name)
+                            val user = FirebaseAuth.getInstance().currentUser
+                            val uid = user?.uid
+                            db.collection("Users").document(uid.toString())
                                 .set(userMap).addOnCompleteListener{
                                     Log.d("db","Sucesso ao salvar dados do user!")
                                 }.addOnFailureListener{
