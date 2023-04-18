@@ -41,7 +41,7 @@ class Login : AppCompatActivity() {
             val senha = binding.etPassword.text.toString()
 
             if(email.isEmpty() || senha.isEmpty()){
-                val snackbar = Snackbar.make(view,"Preencha todos os campos!",Snackbar.LENGTH_SHORT)
+                val snackbar = Snackbar.make(binding.editEmail,"Preencha todos os campos!",Snackbar.LENGTH_SHORT)
                 snackbar.setBackgroundTint(Color.RED)
                 snackbar.show()
             }else{
@@ -50,7 +50,7 @@ class Login : AppCompatActivity() {
                         navegarToHome()
                     }
                 }.addOnFailureListener{
-                    val snackbar = Snackbar.make(view,"Erro ao fazer o login do usuário!",Snackbar.LENGTH_SHORT)
+                    val snackbar = Snackbar.make(binding.editEmail,"Erro ao fazer o login do usuário!",Snackbar.LENGTH_SHORT)
                     snackbar.setBackgroundTint(Color.RED)
                     snackbar.show()
                 }
