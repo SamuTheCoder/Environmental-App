@@ -97,7 +97,10 @@ class Home : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent) {
         when (event.sensor.type) {
             Sensor.TYPE_AMBIENT_TEMPERATURE -> {
-                val temperature = event.values[0]
+                var temperature = event.values[0]
+                if(SettingsConstants.isCelsius == false){
+                    temperature = ((temperature * 1.8) + 32).toFloat()
+                }
                 val temperatureText = findViewById<TextView>(R.id.temperature)
                 temperatureText.setText(String.valueOf(temperature))
             }
@@ -107,7 +110,10 @@ class Home : AppCompatActivity(), SensorEventListener {
                 humidityText.setText(String.valueOf(humidity))
             }
             Sensor.TYPE_PRESSURE -> {
-                val pressure = event.values[0]
+                var pressure = event.values[0]
+                if(SettingsConstants.isPascal == false){
+                    pressure = pressure/1000
+                }
                 val pressureText = findViewById<TextView>(R.id.pressure)
                 pressureText.setText(String.valueOf(pressure))
             }
