@@ -38,9 +38,15 @@ class Home : AppCompatActivity(), SensorEventListener {
         pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE)
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
 
-        val profileButton = findViewById<Button>(R.id.profileButton)
+        val profileButton = findViewById<Button>(R.id.profileButtonH)
         profileButton.setOnClickListener{
             val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
+
+        val definitionsButton = findViewById<Button>(R.id.definitionsButtonH)
+        definitionsButton.setOnClickListener{
+            val intent = Intent(this, Definitions::class.java)
             startActivity(intent)
         }
     }
@@ -121,7 +127,7 @@ class Home : AppCompatActivity(), SensorEventListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if(requestCode == wifiPermissionRequestCode){
             if(grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                
+
             }
             else{
 
