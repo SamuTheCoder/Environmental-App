@@ -213,6 +213,7 @@
         android:layout_marginBottom="20dp"
         >
         <Button
+            android:id="@+id/profileButtonH"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -220,6 +221,7 @@
             android:background="@drawable/custom_button" />
 
         <Button
+            android:id="@+id/searchButtonH"
             android:layout_height="match_parent"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -227,6 +229,7 @@
             android:background="@drawable/custom_button"/>
 
         <Button
+            android:id="@+id/definitionsButtonH"
             android:layout_height="wrap_content"
             android:layout_width="0dp"
             android:layout_weight="1"
