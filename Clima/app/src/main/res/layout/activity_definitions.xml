@@ -11,15 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
         android:orientation="vertical">
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="90dp"
-            android:layout_height="92dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="150dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/clima1" />
+
 
         <TextView
             android:id="@+id/username"
@@ -61,16 +53,16 @@
                     >
                     <Button
                         android:id="@+id/celsius"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/custom_button"
                         android:text="Cº" />
 
                     <Button
                         android:id="@+id/farenheit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/custom_button"
                         android:text="Fº" />
@@ -97,16 +89,16 @@
                     android:layout_marginEnd="10dp">
                     <Button
                         android:id="@+id/pascal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/custom_button"
-                        android:text="Pascal" />
+                        android:text="hPa" />
 
                     <Button
                         android:id="@+id/bar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
                         android:layout_centerVertical="true"
                         android:background="@drawable/custom_button"
                         android:text="Bar" />
@@ -135,7 +127,7 @@
                     android:layout_gravity="right | center_vertical"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="50dp"
-                    android:text="Ativar/Desativar"
+                    android:text="Sim/Não"
                     android:textSize="12dp" />
 
             </LinearLayout>
@@ -172,6 +164,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/custom_button"
-            android:text="Definições" />
+            android:text="Settings" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
