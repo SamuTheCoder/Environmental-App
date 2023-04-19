@@ -35,8 +35,13 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        */
+        binding.btHistorico.setOnClickListener {
+            val intent = Intent(this,Historico::class.java)
+            startActivity(intent)
+            finish()
+        }
 
-         */
         binding.definitionsButtonD.setOnClickListener {
             val intent = Intent(this, Definitions::class.java)
             startActivity(intent)
@@ -53,7 +58,7 @@ class Profile : AppCompatActivity() {
             .addSnapshotListener {documento, error ->
                 if(documento != null){
                    binding.textNomeUsuario.text = documento.getString("Nome") + " "  +  documento.getString("Ultimo_Nome")
-                   binding.textEmailUser.text   = documento.getString("Email")
+                   binding.textEmailUser.text   = documento.getString("email")
                 }
             }
 

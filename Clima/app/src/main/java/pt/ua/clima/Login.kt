@@ -31,7 +31,7 @@ class Login : AppCompatActivity() {
         binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
         val googleSignOpcion = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("783989715051-n4b4bpi46upmd6937p0pht2360uu78h4.apps.googleusercontent.com")
+            .requestIdToken("783989715051-j63qr9i3ogk2h7rojbvc0jlv3cledeeu.apps.googleusercontent.com")
             .requestEmail()
             .build()
         googleSignClient = GoogleSignIn.getClient(this,googleSignOpcion)

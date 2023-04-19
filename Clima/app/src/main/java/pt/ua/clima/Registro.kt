@@ -66,6 +66,12 @@ class Registro : AppCompatActivity() {
                                 }.addOnFailureListener{
 
                                 }
+                            /*
+                            val  snackbar1 = Snackbar.make(view,user.toString(),Snackbar.LENGTH_SHORT)
+                            snackbar1.setBackgroundTint(Color.RED)
+                            snackbar1.show()
+
+                             */
                             navegarToHome()
                         }
                     }.addOnFailureListener{execption ->

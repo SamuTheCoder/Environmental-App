@@ -10,8 +10,11 @@ import android.hardware.SensorManager
 import android.net.wifi.WifiManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import java.lang.String
 
 class Home : AppCompatActivity(), SensorEventListener {
@@ -21,11 +24,19 @@ class Home : AppCompatActivity(), SensorEventListener {
     private var humiditySensor: Sensor? = null
     private var pressureSensor: Sensor? = null
     private var lightSensor: Sensor? = null
+    private var Temperatura : Float = 0.0f
+    private  var Humidade : Float = 0.0f
+    private  var PressaoAtm : Float = 0.0f
+    private  var Luminosidade :Float = 0.0f
+
+
     companion object{
         const val wifiPermissionRequestCode = 1
     }
 
     private lateinit var wifiManager: WifiManager
+    private val auth = FirebaseAuth.getInstance()
+    private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -101,11 +112,13 @@ class Home : AppCompatActivity(), SensorEventListener {
                 if(SettingsConstants.isCelsius == false){
                     temperature = ((temperature * 1.8) + 32).toFloat()
                 }
+                Temperatura = temperature
                 val temperatureText = findViewById<TextView>(R.id.temperature)
                 temperatureText.setText(String.valueOf(temperature))
             }
             Sensor.TYPE_RELATIVE_HUMIDITY -> {
                 val humidity = event.values[0]
+                Humidade = humidity
                 val humidityText = findViewById<TextView>(R.id.humidity)
                 humidityText.setText(String.valueOf(humidity))
             }
@@ -114,15 +127,26 @@ class Home : AppCompatActivity(), SensorEventListener {
                 if(SettingsConstants.isPascal == false){
                     pressure = pressure/1000
                 }
+                PressaoAtm = pressure
                 val pressureText = findViewById<TextView>(R.id.pressure)
                 pressureText.setText(String.valueOf(pressure))
             }
             Sensor.TYPE_LIGHT -> {
                 val luminosity = event.values[0]
+                Luminosidade = luminosity
                 val luminosityText = findViewById<TextView>(R.id.luminosity)
                 luminosityText.setText(String.valueOf(luminosity))
             }
         }
+        val medidaMap = hashMapOf("temperature" to Temperatura, "humidity" to Humidade, "pressure" to PressaoAtm, "luminosity" to Luminosidade)
+        val user = FirebaseAuth.getInstance().currentUser
+        val uid = user?.uid
+        db.collection("measurement").document(uid.toString())
+            .set(medidaMap).addOnCompleteListener{
+                Log.d("db","Sucesso ao salvar dados da medição!")
+            }.addOnFailureListener{
+
+            }
     }
 
     override fun onRequestPermissionsResult(
