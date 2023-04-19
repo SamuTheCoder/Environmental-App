@@ -25,6 +25,11 @@ class Historico : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        binding.pesquisar.setOnClickListener {
+            val intent = Intent(this,Search::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
     override fun onStart() {

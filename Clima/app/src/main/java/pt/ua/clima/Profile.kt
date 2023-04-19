@@ -29,13 +29,13 @@ class Profile : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-        /*
+
         binding.pesquisar.setOnClickListener {
-            val intent = Intent(this, Home::class.java)
+            val intent = Intent(this, Search::class.java)
             startActivity(intent)
             finish()
         }
-        */
+
         binding.btHistorico.setOnClickListener {
             val intent = Intent(this,Historico::class.java)
             startActivity(intent)
