@@ -43,9 +43,9 @@ class Definitions: AppCompatActivity(){
             startActivity(intent)
         }
 
-        val definitionsButton = findViewById<Button>(R.id.definitionsButtonD)
-        definitionsButton.setOnClickListener{
-            val intent = Intent(this, Definitions::class.java)
+        val searchButton = findViewById<Button>(R.id.searchButtonD)
+        searchButton.setOnClickListener{
+            val intent = Intent(this, Search::class.java)
             startActivity(intent)
         }
     }

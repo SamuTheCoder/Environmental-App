@@ -60,6 +60,11 @@ class Home : AppCompatActivity(), SensorEventListener {
             val intent = Intent(this, Definitions::class.java)
             startActivity(intent)
         }
+        val searchButton = findViewById<Button>(R.id.searchButtonH)
+        searchButton.setOnClickListener{
+            val intent = Intent(this, Search::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
